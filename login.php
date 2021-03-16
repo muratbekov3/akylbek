@@ -122,7 +122,7 @@ button:hover {
 </style>
 <body>
 
-<form action="/index.html" style="border:1px solid #ccc">
+<form action="/index.php" style="border:1px solid #ccc">
   <div class="container">
     <h1 style="text-align: center;">Sign Up</h1>
     <p style="text-align: center;" >Please fill in this form to create an account.</p>
