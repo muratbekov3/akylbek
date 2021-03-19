@@ -135,7 +135,7 @@ button:hover {
     <input type="password" placeholder="Enter Password" name="psw" id="lname" required>
 
     <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="lname" required>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="bname" required>
     
     <label>
       <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
@@ -153,9 +153,10 @@ button:hover {
       function myFunction(){
 var x = document.getElementById('fname').value
 var b = document.getElementById('lname').value
+var c = document.getElementById('bname').value
 var form = document.querySelector('form')
 
-if (x == "akylbek" && b == "12345"){
+if (x == "akylbek" && b == "12345" && c=="12345"){
     form.setAttribute("action", "/main.php")
 
 }else{
