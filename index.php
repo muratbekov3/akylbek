@@ -122,20 +122,20 @@ button:hover {
 </style>
 <body>
 
-<form action="/main.php" style="border:1px solid #ccc">
+<form action="" style="border:1px solid #ccc">
   <div class="container">
     <h1 style="text-align: center;">Sign Up</h1>
     <p style="text-align: center;" >Please fill in this form to create an account.</p>
     <hr>
 
     <label type="email" size="32" required name="email" style="text-align: center;"><b >Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <input type="text" placeholder="Enter Email" name="email" id="fname"required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" name="psw" id="lname" required>
 
     <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="lname" required>
     
     <label>
       <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
@@ -145,10 +145,24 @@ button:hover {
 
     <div class="clearfix">
       <button type="button" class="cancelbtn" >Cancel</button>
-      <button type="submit" class="signupbtn">Sign Up</button>
+      <button type="submit" onclick="myFunction()"class="signupbtn">Sign Up</button>
     </div>
   </div>
 </form>
+    <script> 
+      function myFunction(){
+var x = document.getElementById('fname').value
+var b = document.getElementById('lname').value
+var form = document.querySelector('form')
 
+if (x == "akylbek" && b == "12345"){
+    form.setAttribute("action", "/main.php")
+
+}else{
+    alert("permission denied")
+}
+
+}
+    </script>
 </body>
 </html>
