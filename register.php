@@ -48,122 +48,156 @@ if (x == "akylbek" , b == "12345"){
 
 <!DOCTYPE html>
 <html>
-<style>
-body {font-family: Arial, Helvetica, sans-serif; background-image:url("img/bg.png") ; color: #ddd;}
-* {box-sizing: border-box}
+    <head>
+        <tittle></tittle>
+    </head>
+    <style>body {
+    min-height:100%;
+    background-color: #263238;
+}
 
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
+.text-center{
   text-align: center;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
 }
 
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
+.space-bot{
+  margin-bottom: 35px;
 }
 
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
+.space-top{
+  margin-top: 35px;
 }
 
-/* Set a style for all buttons */
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
+/* Title */
+
+h1 {
+    color: white;
+    font-family: 'Roboto';
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 25px;
+    text-align: center;
 }
 
-button:hover {
-  opacity:1;
-}
+/* Sign Up */
 
-/* Extra styles for the cancel button */
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
-}
-
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn, .signupbtn {
-  float: left;
-  width: 50%;
-}
-
-/* Add padding to container elements */
 .container {
-  padding: 16px;
+    max-width: 400px;
+    max-height: 100px;
+    margin-top: 10px;
 }
 
-/* Clear floats */
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
+.alert-danger{
+	text-align: center;
 }
 
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
-     width: 100%;
-  }
+.signup-screen {
+	  padding: 20px;
+    padding-bottom: 40px;
+    border-radius: 5px;
+    background-color: #2c3940;
+    box-shadow: 0 1px 6px rgba(0,0,0,.3);
+    color: white;
 }
-</style>
-<body>
 
-<form action="" style="border:1px solid #ccc">
-  <div class="container">
-    <h1 style="text-align: center;">Sign Up</h1>
-    <p style="text-align: center;" >Please fill in this form to create an account.</p>
-    <hr>
+.btn{
+  border-radius: 2px;
+}
 
-    <label type="email" size="32" required name="email" style="text-align: center;"><b >Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="fname"required>
+.cancel{
+  background-color: #df405a;
+}
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="lname" required>
+.done{
+  background-color: #5CAB7D;
+}
 
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="bname" required>
-    
-    <label>
-      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-    </label>
-    
-    <p style="text-align: center;">By creating an account you agree to our <a href="https://policies.google.com/" style="color:dodgerblue">Terms & Privacy</a>.</p>
+.done:hover{
+  background-color: #6dc793;
+}
 
-    <div class="clearfix">
-      <button type="button" class="cancelbtn" >Cancel</button>
-      <button type="submit" onclick="myFunction()"class="signupbtn">Sign Up</button>
+.done:focus{
+  background-color: #6dc793;
+}
+
+.cancel:hover{
+  background-color: #f0435f;
+}
+
+.cancel:focus{
+  background-color: #f0435f;
+}
+
+.input-group {
+    width:100%;
+}
+
+.input-group .ng-invalid {
+    border: 2px solid #e74c3c;
+    border-radius: 3px;
+}
+
+/* Error Box */
+
+.alert{
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  border-color: #e85a71;
+  background-color:  #e85a71;
+  color: white;
+  
+}
+
+.help-block {
+    font-size: 12px;
+    color: white
+}</style>
+<body ng-controller="RegisterCtrl" ng-app="myApp">
+ <div class="container">
+   <div id="signup">
+      <div class="signup-screen">
+         <div class="space-bot text-center">
+            <h1>Sign up</h1>
+           <div class="divider"></div>
+         </div>
+           <form class="form-register" method="post" name="register" novalidate>
+	            <div class="input-field col s6">
+              <input id="first-name" type="text" class="validate" required>
+              <label for="first-name">First Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="last-name" type="text" class="validate" required>
+              <label for="last-name">Last Name</label>
+             </div>
+             <div class="input-field col s6">
+              <input id="email" type="email" name="email" ng-model="email" class="validate" required>
+              <label for="email">Email</label>
+             </div>
+             <p class="alert alert-danger" ng-show="form-register.email.$error.email">Your email is invalid.</p>
+             <div class="input-field col s6">
+               <input id="password" type="password" name="password" ng-model="password" ng-minlength='6' class="validate" required>
+               <label for="password">Password</label>
+              </div>
+              <p class="alert alert-danger" ng-show="form-register.password.$error.minlength || form.password.$invalid">Your password must be at least 6 characters.</p>
+              <div class="space-top text-center">
+               <button ng-disabled="form-register.$invalid" class="waves-effect waves-light btn done">
+               <i class="material-icons left">done</i> Done
+               </button>
+               <button type="button" class="waves-effect waves-light btn cancel">
+               <i class="material-icons left">clear</i>Cancel
+               </button>
+              </div>
+             </form>
+           </div>
+        </div>
     </div>
-  </div>
-</form>
-    <script> 
-      function myFunction(){
-var x = document.getElementById('fname').value
-var b = document.getElementById('lname').value
-var c = document.getElementById('bname').value
-var form = document.querySelector('form')
+    <script>
+    var myApp = angular.module("myApp", []);
+myApp.controller("RegisterCtrl", function ($scope) {
 
-if (x == "akylbek" && b == "12345" && c=="12345"){
-    form.setAttribute("action", "/main.php")
-
-}else{
-    alert("permission denied")
-}
-
-}
+});
     </script>
 </body>
 </html>
