@@ -162,7 +162,7 @@ h1 {
             <h1>Sign up</h1>
            <div class="divider"></div>
          </div>
-           <form class="form-register" method="post" name="register" novalidate>
+           <form class="form-register" method="post" name="register" novalidate action="index.php">
 	            <div class="input-field col s6">
               <input id="first-name" type="text" class="validate" required>
               <label for="first-name">First Name</label>
