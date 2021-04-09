@@ -103,7 +103,7 @@ input {
 <body>
 
 	<div class="box">
-		<form class="login-form" action="index.php">
+		<form class="login-form" action="main.php">
 			<h1>Login</h1>
 			<input type="text" name="username" placeholder="Username" required>
 			<input type="password" name="password" placeholder="Password" required>
