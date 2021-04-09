@@ -110,7 +110,7 @@ input {
 			<input type="submit" name="Login" value="Login">
 			<div class="links">
 				<a href="#">Forgot Password</a>
-				<a href="#">Sign Up</a>
+				<a href="/login.php">Sign Up</a>
 			</div>
 			</button>
 		</form>
