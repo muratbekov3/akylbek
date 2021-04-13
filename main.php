@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,10 +29,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-2 col-sm-2 col-xs-4 logotype">
-                        <a href="https://readycodeee.github.io/"><img src="img/logo.png" alt="Логотип">&nbsp;</a>
+                       <img src="<?= $_SESSION['user']['avatar']?>" width="100" alt="">
                     </div>
                     <div class=" col-md-offset-1 col-sm-6 col-sm-offset-1 col-xs-10 col-xs-offset-1 caption text-center wow fadeInDown" data-wow-offset="150">
-                        <h4 class="titl">САЙТ-ПОРТФОЛИО веб-разработчика</h4>
+                        <h4 class="titl">Welcome <?= $_SESSION['user']['full_name']?> !</h4>
                     </div>
                     <div class="btn col-md-offset-2 col-lg-offset-2 col-sm-offset-2 col-xs-offset-5" autofocus>
                         <div class="sandwich">
