@@ -29,7 +29,7 @@ session_start();
             <div class="container">
                 <div class="row">
                     <div class="col-md-2 col-sm-2 col-xs-4 logotype">
-                       <img src="<?= $_SESSION['user']['avatar']?>" width="100" alt="">
+                       <img src="<?= $_SESSION['user']['avatar']?>" width="80" height="80" style="border-radius: 50px;" alt="" >
                     </div>
                     <div class=" col-md-offset-1 col-sm-6 col-sm-offset-1 col-xs-10 col-xs-offset-1 caption text-center wow fadeInDown" data-wow-offset="150">
                         <h4 class="titl">Welcome <?= $_SESSION['user']['full_name']?> !</h4>
